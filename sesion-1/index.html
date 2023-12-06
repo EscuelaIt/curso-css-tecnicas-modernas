@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+
+  <section id="learnings" class="learnings">
+
+    <h2>Aprendizajes</h2>
+
+    <div class="learnings-selector">
+      <label for="list"><img src="assets/list.svg" alt="List view"></label>
+      <input type="radio" name="view" id="list" class="visually-hidden" checked>
+      <label for="grid"><img src="assets/grid.svg" alt="Grid view"></label>
+      <input type="radio" name="view" id="grid" class="visually-hidden">
+    </div>
+
+    <ul class="learnings-list">
+      <li>
+        <label for="learning-placeholder">:placeholder</label>
+        <input type="checkbox" name="" id="learning-placeholder" class="visually-hidden">
+      </li>
+      <li>
+        <label for="learning-has">:has</label>
+        <input type="checkbox" name="" id="learning-has" class="visually-hidden">
+      </li>
+      <li>
+        <label for="learning-is">:is</label>
+        <input type="checkbox" name="" id="learning-is" class="visually-hidden">
+      </li>
+      <li>
+        <label for="learning-nesting">Nesting</label>
+        <input type="checkbox" name="" id="learning-nesting" class="visually-hidden">
+      </li>
+      <li>
+        <label for="learning-vars">Custom Properties</label>
+        <input type="checkbox" name="" id="learning-vars" class="visually-hidden">
+      </li>
+      <li>
+        <label for="learning-visual-hidden">Visually Hidden</label>
+        <input type="checkbox" name="" id="learning-visual-hidden" class="visually-hidden">
+      </li>
+      <li>
+        <label for="learning-inset-shadow">Inset Box Shadow</label>
+        <input type="checkbox" name="" id="learning-inset-shadow" class="visually-hidden">
+      </li>
+      <li>
+        <label for="learning-filter">Filter</label>
+        <input type="checkbox" name="" id="learning-filter" class="visually-hidden">
+      </li>
+    </ul>
+
+  </section>
+
+
+  <section id="contacto" class="contact">
+    <h2>Contacto</h2>
+
+    <article class="contact-info">
+      <form id="contactForm" class="form" action="">
+
+        <fieldset class="form-style form-switch">
+          <!-- <legend>Elige un estilo</legend> -->
+          <label class="toggle" for="line">Line</label>
+          <input type="radio" name="theme-form" id="line" checked class="check-toggle">
+          <input type="radio" name="theme-form" id="shadow" class="check-toggle">
+          <label for="shadow">Shadow</label>
+        </fieldset>
+
+        <fieldset class="field-text form-name">
+          <label for="nombre">Nombre</label>
+          <input type="text" name="nombre" id="nombre" placeholder="Escribe tu nombre">
+        </fieldset>
+
+        <fieldset class="field-text form-email">
+          <label for="email">Email</label>
+          <input type="email" name="email" id="email" placeholder="Escribe tu email">
+        </fieldset>
+
+        <fieldset class="field-check form-learn">
+          <legend>¿Qué te gustaría aprender?</legend>
+          <label for="learn-flex">Quiero aprender Flexbox</label>
+          <input type="checkbox" name="flex" id="learn-flex" class="visually-hidden">
+          <!-- <input type="checkbox" name="flex" id="flex"> -->
+          <label for="learn-grid">Quiero aprender Grid</label>
+          <input type="checkbox" name="grid" id="learn-grid" class="visually-hidden">
+          <!-- <input type="checkbox" name="grid" id="grid"> -->
+          <label for="learn-anim">Quiero aprender animaciones</label>
+          <input type="checkbox" name="anim" id="learn-anim" class="visually-hidden">
+          <!-- <input type="checkbox" name="anim" id="anim"> -->
+        </fieldset>
+
+        <fieldset class="field-radio form-level">
+          <legend>¿Cuál consideras que es tu nivel?</legend>
+          <label for="junior">Principiante</label>
+          <!-- <input type="radio" name="level" id="junior" checked> -->
+          <input type="radio" name="level" id="junior" checked class="visually-hidden">
+          <label for="mid">Intermedio</label>
+          <!-- <input type="radio" name="level" id="mid"> -->
+          <input type="radio" name="level" id="mid" class="visually-hidden">
+          <label for="senior">Avanzado</label>
+          <!-- <input type="radio" name="level" id="senior"> -->
+          <input type="radio" name="level" id="senior" class="visually-hidden">
+        </fieldset>
+
+        <fieldset class="field-area form-message">
+          <label for="texto">¿Quieres contarnos alguna cosa?</label>
+          <textarea name="texto" id="texto" cols="30" rows="10" placeholder="¿Qué nos quieres contar?"></textarea>
+        </fieldset>
+        
+        <fieldset class="field-rgpd form-rgpd">
+          <label for="rgpd">He leído y acepto la <a href="">política de privacidad</a></label>
+          <input type="checkbox" name="rgpd" id="rgpd" class="visually-hidden">
+        </fieldset>
+
+        <input class="btn form-submit" type="submit" value="Enviar">
+
+        <!-- <div class="form-resp">
+          <span class="spinner"></span>
+        </div> -->
+      </form>
+    </article>
+
+  </section>
+  
+</body>
+</html>
