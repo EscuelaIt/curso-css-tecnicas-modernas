@@ -1,0 +1,798 @@
+:root {
+  /* colores */
+  --color-green: hsl(120, 100%, 80%);
+  --color-light-green: hsl(120, 100%, 90%);
+  /* step 1a */
+  --color-blue: hsl(240, 100%, 30%);
+  --color-light-blue: hsl(240, 100%, 60%);
+
+  --color-lightgray: #eee;
+  --color-dark: rgb(33 33 33);
+  --color-black: #000;
+
+  --color-gradient-cyan: lch(86.291% 95.837 187.858);
+  --color-gradient-green: lch(86.291% 95.837 155.858);
+  --color-gradient-palepink: lch(86.291% 95.837 20.858);
+
+  --color-gradient-blue: lch(44.291% 95.837 316.858);
+  --color-gradient-yellow: lch(84.291% 95.837 110.858);
+  --color-gradient-pink: lch(61.291% 95.837 0.858);
+
+  /* estilos del tema */
+  --theme-primary: var(--color-green);
+  --theme-primary-alt: var(--color-green);
+  --theme-background: var(--color-dark);
+  --theme-text: var(--color-lightgray);
+
+  --radius: 6px;
+
+
+
+
+
+
+  /* --gradient: radial-gradient(at 50% 30%, var(--color-gradient-1), var(--color-gradient-2), var(--color-gradient-3), var(--color-gradient-1)); */
+  /* --gradient: conic-gradient(at 50% 30%, var(--color-gradient-1), var(--color-gradient-2), var(--color-gradient-3), var(--color-gradient-1)); */
+  --gradient: linear-gradient(-35deg, var(--color-gradient-1), var(--color-gradient-2), var(--color-gradient-3), var(--color-gradient-1));
+
+  --background-cover-dark: linear-gradient(rgb(33 33 33 / .3), rgb(33 33 33 / 1)), url('assets/background-cover.png');
+  --background-cover-light: linear-gradient(rgb(255 255 255 / .3), rgb(238 238 238 / 1)), url('assets/background-cover.png');
+
+  
+  /* formulario */
+  --accent: var(--theme-primary);
+  --bg-form: transparent;
+  --form-shadow: inset 0 -10px 8px -12px var(--theme-primary), inset 2px 2px 5px 3px #000;
+  
+  /* iconos */
+  --icon-size: max(2rem,4cqw);
+  --icon-shadow: drop-shadow(0 0 2px var(--theme-primary));
+  --icon-shadow-hover: drop-shadow(0 0 2px var(--theme-primary)) drop-shadow(0 0 4px var(--theme-primary));
+
+
+
+    /* step 5 */
+    --color-gradient-1: var(--color-gradient-cyan);
+    --color-gradient-2: var(--color-gradient-green);
+    --color-gradient-3: var(--color-gradient-palepink);
+}
+
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+/**************/
+/* utilidades */
+/**************/
+
+.check-toggle,
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+}
+
+.selector {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 2rem;
+  & label {
+    cursor: pointer;
+    &:hover {
+      /* filter: invert(1); */
+      filter: invert(1) drop-shadow(0 0 2px var(--theme-primary))
+    }
+    &:has(+input:checked) {
+      filter: invert(0.5);
+    }
+  }
+}
+
+
+
+
+.demo-filter {
+  display: block;
+  width: 200px;
+  height: auto;
+  filter: drop-shadow(0 0 5px var(--theme-primary));
+  /* box-shadow: 0px 0px 2px 2px var(--theme-primary); */
+  /* &:hover {
+    fill: var(--theme-primary)
+  } */
+}
+.demo-svg {
+  width: 4rem;
+  height: 4rem;
+  transition: all .3s;
+  &:hover {
+    fill: var(--theme-primary)
+  }
+}
+
+.icon {
+  display: inline-block;
+  width: var(--icon-size);
+  height: var(--icon-size);
+  fill: currentColor;
+  vertical-align: middle;
+  filter: var(--icon-shadow);
+  transition: all .3s;
+  &:hover {
+    filter: var(--icon-shadow-hover);
+  }
+}
+
+/*********************/
+/* estilos generales */
+/*********************/
+
+body {
+
+  --theme-primary: var(--color-green);
+  --theme-primary-alt: var(--color-light-green);
+  --theme-background:var(--color-dark);
+  --theme-text:var(--color-lightgray);
+  --accent: var(--theme-primary);
+
+  background-color: var(--theme-background);
+  color: var(--theme-text);
+  font-family: 'Montserrat', Arial, sans-serif;
+}
+
+/*
+@media (prefers-color-scheme: dark) {
+  body {
+  --theme-primary: var(--color-green);
+  --theme-background:var(--color-dark);
+  --theme-text:var(--color-lightgray);
+  --icon-shadow: drop-shadow(0 0 2px var(--theme-primary));
+  --icon-shadow-hover: drop-shadow(0 0 2px var(--theme-primary)) drop-shadow(0 0 4px var(--theme-primary));
+  --form-shadow-auto: inset 0 -10px 8px -12px var(--theme-primary), inset 2px 2px 5px 3px #000;
+
+  }
+}
+@media (prefers-color-scheme: light) {
+  body {
+  --theme-primary: var(--color-blue);
+  --theme-background:var(--color-lightgray);
+  --theme-text:var(--color-black);
+  --icon-shadow: none;
+  --icon-shadow-hover: drop-shadow(0 0 2px var(--theme-primary)) drop-shadow(0 0 4px var(--theme-primary));
+  --form-shadow: inset 0 -10px 8px -12px var(--theme-primary), inset 2px 2px 5px 3px hsl(0,0%,45%);
+  }
+}
+*/
+
+body:has(#dark:checked) {
+  --theme-primary: var(--color-green);
+  --theme-primary-alt: var(--color-light-green);
+  --theme-background:var(--color-dark);
+  --theme-text:var(--color-lightgray);
+  --icon-shadow: drop-shadow(0 0 2px var(--theme-primary));
+  --icon-shadow-hover: drop-shadow(0 0 2px var(--theme-primary)) drop-shadow(0 0 4px var(--theme-primary));
+  
+  --form-shadow: inset 0 -10px 8px -12px var(--theme-primary), inset 2px 2px 5px 3px #000;
+  --background-cover: var(--background-cover-dark);
+  --color-gradient-1: var(--color-gradient-cyan);
+  --color-gradient-2: var(--color-gradient-green);
+  --color-gradient-3: var(--color-gradient-palepink);
+  --gradient: linear-gradient(-35deg, var(--color-gradient-1), var(--color-gradient-2), var(--color-gradient-3), var(--color-gradient-1));
+
+}
+body:has(#light:checked) {
+  --theme-primary: var(--color-blue);
+  --theme-primary-alt: var(--color-light-blue);
+  --theme-background:var(--color-lightgray);
+  --theme-text:var(--color-black);
+  
+  --icon-shadow: none;
+  --icon-shadow-hover:  drop-shadow(0 0 4px var(--theme-primary));
+  
+  --form-shadow: inset 0 -10px 8px -12px var(--theme-primary), inset 2px 2px 5px 3px hsl(0,0%,45%);
+  --background-cover: var(--background-cover-light);
+
+
+  --color-gradient-1: var(--color-gradient-blue);
+  --color-gradient-2: var(--color-gradient-yellow);
+  --color-gradient-3: var(--color-gradient-pink);
+    --gradient: linear-gradient(-35deg, var(--color-gradient-1), var(--color-gradient-2), var(--color-gradient-3), var(--color-gradient-1));
+
+}
+
+body:has(#system:checked) {
+
+  @media (prefers-color-scheme: dark) {
+    --theme-primary: var(--color-green);
+    --theme-primary-alt: var(--color-light-green);
+    --theme-background:var(--color-dark);
+    --theme-text:var(--color-lightgray);
+    --icon-shadow: drop-shadow(0 0 2px var(--theme-primary));
+    --icon-shadow-hover: drop-shadow(0 0 2px var(--theme-primary)) drop-shadow(0 0 4px var(--theme-primary));
+    --form-shadow-auto: inset 0 -10px 8px -12px var(--theme-primary), inset 2px 2px 5px 3px #000;
+    --background-cover: var(--background-cover-dark);
+  
+    --color-gradient-1: var(--color-gradient-cyan);
+    --color-gradient-2: var(--color-gradient-green);
+    --color-gradient-3: var(--color-gradient-palepink);
+    --gradient: linear-gradient(-35deg, var(--color-gradient-1), var(--color-gradient-2), var(--color-gradient-3), var(--color-gradient-1));
+
+  }
+
+  @media (prefers-color-scheme: light) {
+    --theme-primary: var(--color-blue);
+    --theme-primary-alt: var(--color-light-blue);
+    --theme-background:var(--color-lightgray);
+    --theme-text:var(--color-black);
+    --icon-shadow: none;
+    --icon-shadow-hover: drop-shadow(0 0 2px var(--theme-primary)) drop-shadow(0 0 4px var(--theme-primary));
+    --form-shadow: inset 0 -10px 8px -12px var(--theme-primary), inset 2px 2px 5px 3px hsl(0,0%,45%);
+    --background-cover: var(--background-cover-light);
+    
+
+    --color-gradient-1: var(--color-gradient-blue);
+    --color-gradient-2: var(--color-gradient-yellow);
+    --color-gradient-3: var(--color-gradient-pink);
+    --gradient: linear-gradient(-35deg, var(--color-gradient-1), var(--color-gradient-2), var(--color-gradient-3), var(--color-gradient-1));
+
+  }
+}
+
+
+
+
+
+a {
+  color: var(--theme-primary);
+}
+
+
+h1 {
+  text-align: center;
+  font-size: 40vmin;
+}
+
+h2 {
+  text-align: center;
+  margin-block: 4rem;
+}
+
+section {
+  padding-block: 4rem;
+}
+
+
+
+
+/***************************************/
+/*            Sección Inicio           */
+/***************************************/
+
+/* .gradient {
+  width: 400px;
+  height: 400px;
+  background: conic-gradient(yellow, rgb(255 0 0 / 1), rgb(0 0 255 / .3), yellow)
+} */
+
+.theme {
+  height: 4rem;
+  margin: 0 auto;
+}
+.inicio {
+  display: grid;
+  place-items: center;
+  height: calc(100vh - 4rem);
+  /* background-image: url('assets/background-cover.png'); */
+  /* opacity: 0.3; */
+  /* background: linear-gradient(rgb(0 0 0 / .3), rgb(0 0 0 / .8)), url('assets/background-cover.png'); */
+            
+  background: var(--background-cover);
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.gradient-text {
+  /* background: linear-gradient( -35deg, var(--theme-primary-alt), var(--color-black)); */
+  background: var(--gradient);
+
+  /* background: url('assets/creativity.jpg'); */
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-size: 100%;
+  background-position: center;
+}
+
+
+/******************************************/
+/*           Sección Hihglights           */
+/******************************************/
+
+/* step 6*/
+.highlights {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  /* background: no-repeat center/100% url(assets/keyboard.jpg); */
+  /* background-image: url(assets/keyboard.jpg); */
+  /* background-position: center; */
+  background: linear-gradient(rgb(0 0 0 / .3), rgb(0 0 0 / .3)), 
+              url(assets/keyboard.jpg);
+  background-attachment: fixed;
+  background-size: 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+
+.card {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  /* align-items: stretch; */
+  flex: 0 0 300px;
+  border-width: 6px;
+  border-style: solid;
+  border-image: linear-gradient(45deg, var(--color-gradient-blue),var(--color-gradient-green),var(--color-gradient-pink)) 1;
+  border-radius: 6px;
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  color: var(--color-black);
+  &:hover {
+    background-image: linear-gradient(45deg, var(--color-gradient-blue),var(--color-gradient-green),var(--color-gradient-pink));
+  }
+  & > :not(img) {
+    padding: 1rem; 
+  }
+  & img {
+    display: block;
+    /* object-fit: contain; */
+    object-fit: cover;
+    width: 100%;
+    height: 200px;
+  }
+
+  & .card-btn {
+    background-color: var(--theme-background);
+    margin-block-end: 1rem;
+    cursor: pointer;
+    text-decoration: none;
+    border-radius: var(--radius);
+  }
+
+  &.card--rounded {
+    color: var(--theme-text);
+    border-radius: var(--radius);
+    /* background: linear-gradient(transparent, transparent) padding-box, */
+    background: linear-gradient(var(--theme-background), var(--theme-background)) padding-box,
+                linear-gradient(45deg, var(--color-gradient-blue),var(--color-gradient-green),var(--color-gradient-pink)) border-box;
+    & .card-btn {
+      background-color: var(--theme-primary);
+      color: var(--theme-background);
+    }
+    
+    &:hover {
+      background: linear-gradient(transparent, transparent) padding-box,
+                  linear-gradient(45deg, var(--color-gradient-blue),var(--color-gradient-green),var(--color-gradient-pink)) border-box;
+      /* filter: invert(); */
+
+      & .card-btn {
+        filter: invert()
+      }
+    }
+  }
+}
+
+
+/******************************************/
+/*            Sección Learnings           */
+/******************************************/
+
+.learnings-selector {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 2rem;
+  & label {
+    cursor: pointer;
+    &:hover {
+      filter: invert(1);
+    }
+    &:has(+input:checked) {
+      filter: invert(0.5);
+    }
+  }
+  
+}
+
+/* label:has(+input:checked) {
+  filter: invert(0.5);
+} */
+
+.learnings {
+  max-width: 80vw;
+  margin: 5rem auto;
+}
+.learnings .learnings-list {
+  display: grid;
+  justify-content: center;
+  gap: 1rem;
+}
+.learnings:has(#list:checked) .learnings-list {
+  grid-template-columns: max-content;
+}
+.learnings:has(#grid:checked) .learnings-list {
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+}
+
+.learnings-list li {
+  position: relative;
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 1rem 2rem;
+  border: 2px solid var(--theme-primary);
+  border-radius: 4px;
+  &:hover {
+    background-color: var(--theme-primary);
+    color: var(--theme-background);
+  }
+  &:has(input:checked) {
+    background-color: var(--theme-primary);
+    color: var(--theme-background);
+  }
+  & label {
+    cursor: pointer;
+  }
+}
+
+
+/*****************************************/
+/*            Sección Contacto           */
+/*****************************************/
+
+/*******************/
+/* Selector estilo */
+/*******************/
+
+.form-style {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 0;
+  padding: 0;
+}
+.form-style label {
+  color: var(--theme-primary);
+}
+.toggle {
+  position: relative;
+  display: flex;
+  align-items: center;
+  margin-inline-end: 6rem;
+}
+.toggle::after {
+  content: '';
+  position: absolute;
+  left: calc(100% + 1rem);
+  display: block;
+  width: 4rem;
+  height: 2rem;
+  border: 2px solid var(--theme-primary);
+  border-radius: 2rem;
+}
+.toggle::before {
+  content: '';
+  position: absolute;
+  left: calc(100% + 1rem);
+  display: block;
+  width: 2rem;
+  height: 2rem;
+  border-radius: 2rem;
+  background-color: var(--theme-primary);
+  transition: all .3s;
+}
+.form-style:has(#line:checked) .toggle::before {
+  left: calc(100% + 1rem);
+}
+.form-style:has(#line:not(:checked)) .toggle::before {
+  left: calc(100% + 3rem);
+}
+
+
+/*************************/
+/* Estructura formulario */
+/*************************/
+
+.form-switch {
+  grid-area: switch;
+  justify-self: flex-start;
+}
+.form-name {
+  grid-area: name;
+}
+.form-email {
+  grid-area: email;
+}
+.form-learn {
+  grid-area: learn;
+}
+.form-level {
+  grid-area: level;
+}
+.form-message {
+  grid-area: message;
+}
+.form-rgpd {
+  grid-area: rgpd;
+  justify-self: flex-start;
+}
+.form-submit {
+  grid-area: submit;
+  width: fit-content;
+}
+.form-resp {
+  grid-area: resp;
+}
+
+.contact-info {
+  display: grid;
+  grid-template-columns: 1fr;
+  justify-items: center;
+
+}
+
+.form {
+  position: relative;
+  display: grid;
+  gap: 4rem;
+  accent-color: var(--accent);
+  display: grid;
+  grid-template-areas: 
+    "switch switch"
+    "name email"
+    "learn level"
+    "message message"
+    "rgpd rgpd"
+    "submit submit"
+    "resp resp";
+}
+.form fieldset:where(.field-check, .field-radio) {
+  grid-template-columns: 1fr;
+}
+
+.form label {
+  color: var(--theme-text);
+  cursor: pointer;
+}
+
+.form input {
+  color: var(--theme-text);
+  font-size: 1rem;
+  background-color: transparent;
+  width: 100%;
+  border: 0;
+  border-bottom: 2px solid var(--theme-primary);
+  transition: all .3s;
+}
+
+.form fieldset legend {
+  color: var(--theme-primary);
+  padding-block-end: 1rem;
+}
+
+.form .field-rgpd {
+  border: none;
+  padding: 0;
+}
+
+
+/*******************/
+/* Chekbox / Radio */
+/*******************/
+
+.form fieldset:is(.field-check, .field-radio) {
+  display: grid;
+  grid-template-columns: 1fr;
+  justify-items: start;
+  gap: 1rem;
+  border: 0;
+  padding: 0;
+}
+
+.form input:is([type="checkbox"],[type="radio"]) {
+  width: auto;
+}
+
+.form label:has(+input[type="checkbox"].visually-hidden)::before{
+  --radius: 0;
+  --size-input: 1.2rem;
+  --size-input-inset: .5rem;
+}
+.form label:has(+input[type="radio"].visually-hidden)::before{
+  --radius: 50%;
+  --size-input: 1.2rem;
+  --size-input-inset: .5rem;
+}
+
+.form label:has(+input.visually-hidden)  {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  cursor: pointer;
+}
+.form label:has(+input.visually-hidden)::before {
+  content: '';
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: var(--size-input);
+  height: var(--size-input);
+  border: 2px solid var(--theme-primary);
+  border-radius: var(--radius);
+}
+.form label:has(+input.visually-hidden:checked)::before {
+  /* content: '✓'; */
+  color: var(--color-black);
+  background-color: var(--theme-primary);
+  box-shadow: inset 0 0 1px 2px var(--theme-background);
+}
+
+
+/**********/
+/* Submit */
+/**********/
+
+.form input.form-submit {
+  justify-self: center;
+  display: block;
+  width: 50%;
+  padding: 1rem 2rem;
+  border: 2px solid var(--theme-primary);
+  color: var(--theme-primary);
+  background-color: var(--theme-background);
+  cursor: pointer;
+  transition: all .3s;
+}
+.form input.form-submit {
+  &:hover{
+    background-color: var(--theme-primary);
+    color: var(--theme-background);
+  }
+}
+
+
+/***************/
+/* Estilo line */
+/***************/
+
+.contact:has(#line:checked){
+    /*********************/
+    /* Input Text, Email */
+    /*********************/
+
+    & .field-text {
+      position: relative;
+      padding: 0;
+      border: 0;
+    }
+    & .field-text label {
+      display: block;
+      position: absolute;
+      bottom: .5rem;
+      z-index: 1;
+      transition: all 0.3s ease-in-out;
+    }
+    & .field-text:has(input:focus) label,
+    & .field-text:has(input:not(:placeholder-shown)) label {
+      color: var(--theme-primary);
+      transform: translateY(-120%) scale(0.9);
+    }
+    
+    & input::placeholder {
+      color: transparent;
+    }
+    & input:not([type="checkbox"]):focus {
+      outline: none;
+    }
+    & input:focus {
+      outline-color: var(--theme-primary);
+      border-bottom: 4px solid var(--theme-primary);
+    }
+
+    /************/
+    /* Textarea */
+    /************/
+
+    & .field-area {
+      position: relative;
+      display: grid;
+      border: 0;
+      padding: 0;
+    }
+
+    & textarea {
+      height: 50px;
+      color: var(--theme-text);
+      transition: height .3s;
+      border: 0;
+      line-height: 2rem;
+      background: linear-gradient(var(--theme-background), var(--theme-background) 1.9rem, var(--theme-primary), 1.9rem, var(--theme-primary));
+      background-size: 100% 2rem;
+      background-repeat: repeat-y;
+      resize: none;
+    }
+    & textarea::placeholder {
+      color: transparent;
+    }
+    & textarea:is(:focus,:not(:placeholder-shown)){
+      height: 200px;
+      outline: none;
+    }
+    & .field-area label {
+      display: block;
+      position: absolute;
+      top: 0;
+      z-index: 1;
+      transition: all 0.3s ease-in-out;
+    }
+    & .field-area:has(textarea:focus) label,
+    & .field-area:has(textarea:not(:placeholder-shown)) label {
+      color: var(--theme-primary);
+      transform: scale(0.9) translate(-1rem, -2rem);
+    }
+}
+
+/*****************/
+/* Estilo shadow */
+/*****************/
+
+.contact:has(#shadow:checked) {
+  & :is(.field-text,.field-area) label {
+    color: var(--theme-primary);
+  }
+  & fieldset:not(.form-style) {
+    border: 0;
+    padding: 0;
+  }
+  & .field-area {
+    position: relative;
+    display: grid;
+    border: 0;
+    padding: 0;
+  }
+  & label:has(+textarea) {
+    margin-bottom: .5rem;
+  }
+  & textarea {
+    height: 50px;
+    color: var(--theme-text);
+  }
+  & :is(input:not([type="submit"]),textarea) {
+    padding: 1rem 0;
+    border: 0;
+    border-bottom: 1px solid var(--theme-primary);
+    background-color: var(--theme-background);
+    transition: all .3s;
+    &:focus {
+      padding: 1rem;
+      outline: none;
+      border-radius: 4px;
+      border: none;
+      box-shadow: var(--form-shadow);
+    }
+  }
+}

@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- <div class="gradient">hola</div> -->
+
+  <header>
+    <nav class="menu">
+      <div class="theme selector">
+        <label for="light"><img class="light" src="assets/light.svg" alt="Light Mode"></label>
+        <input type="radio" name="theme" id="light" class="visually-hidden">
+        <label for="dark"><img class="dark" src="assets/dark.svg" alt="Dark Mode"></label>
+        <input type="radio" name="theme" id="dark" class="visually-hidden">
+        <label for="system"><img class="system" src="assets/system.svg" alt="OS System Mode"></label>
+        <input type="radio" name="theme" id="system" class="visually-hidden" checked>
+      </div>
+    </nav>
+  </header>
+  
+  
+  
+<!-- <img class="demo-filter" src="assets/system.svg" alt="OS System Mode">
+<img class="demo-filter" src="assets/system.png" alt="OS System Mode">
+<svg class="demo-svg" xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 -960 960 960" width="24"><path d="M480-28 346-160H160v-186L28-480l132-134v-186h186l134-132 134 132h186v186l132 134-132 134v186H614L480-28Zm0-252q83 0 141.5-58.5T680-480q0-83-58.5-141.5T480-680v400Zm0 140 100-100h140v-140l100-100-100-100v-140H580L480-820 380-720H240v140L140-480l100 100v140h140l100 100Zm0-340Z"/></svg>
+<img class="demo-filter" src="assets/shinobu.webp" alt="OS System Mode"> -->
+
+<section class="inicio">
+  <h1 class="gradient-text">CSS</h1>
+</section>
+
+
+<section class="highlights">
+
+  <article class="card">
+    <h3>Desata tu creatividad</h3>
+    <img src="assets/creativity.jpg" alt="monitor de ordenador con una nube de colores">
+    <p>Aprende a dar vida a tus ideas con estilos asombrosos. Domina CSS y crea diseños web impactantes que cautiven a tu audiencia.</p>
+    <a class="card-btn" href="#contactForm">Descubre más</a>
+  </article>
+
+  <article class="card">
+    <h3>Eleva tu presencia online</h3>
+    <img src="assets/laptop.jpg" alt="">
+    <p>Conviértete en un experto en CSS. Impulsa la estética de tus proyectos web y brinda una imagen profesional a tus clientes y usuarios.</p>
+    <a class="card-btn" href="#contactForm">Inscríbete ahora</a>
+  </article>
+
+  <article class="card card--rounded">
+    <h3>Domina CSS</h3>
+    <img src="assets/remote.jpeg" alt="">
+    <p>Aprende las técnicas más actuales de CSS. Domina efectos, layouts y animaciones para destacar en el mundo del diseño web.</p>
+    <a class="card-btn" href="#contactForm">Comienza hoy</a>
+  </article>
+
+</section>
+
+
+
+  <section id="learnings" class="learnings">
+
+    <h2>Aprendizajes</h2>
+
+    <div class="selector">
+      <label for="list"><img src="assets/list.svg" alt="List view"></label>
+      <input type="radio" name="view" id="list" class="visually-hidden">
+      <label for="grid"><img src="assets/grid.svg" alt="Grid view"></label>
+      <input type="radio" name="view" id="grid" class="visually-hidden" checked>
+    </div>
+
+    <ul class="learnings-list">
+      <li>
+        <label for="learning-color-scheme">:prefers-color-scheme</label>
+        <input type="checkbox" name="" id="learning-color-scheme" class="visually-hidden">
+      </li>
+      <li>
+        <label for="learning-filter">filter</label>
+        <input type="checkbox" name="" id="learning-filter" class="visually-hidden">
+      </li>
+      <li>
+        <label for="learning-gradient">gradient</label>
+        <input type="checkbox" name="" id="learning-gradient" class="visually-hidden">
+      </li>
+      <li>
+        <label for="learning-hsl">hsl</label>
+        <input type="checkbox" name="" id="learning-hsl" class="visually-hidden">
+      </li>
+      <li>
+        <label for="learning-lch">lch</label>
+        <input type="checkbox" name="" id="learning-lch" class="visually-hidden">
+      </li>
+      <li>
+        <label for="learning-rgb">rgb alpha</label>
+        <input type="checkbox" name="" id="learning-rgb" class="visually-hidden">
+      </li>
+      <li>
+        <label for="learning-background-clip">background-clip</label>
+        <input type="checkbox" name="" id="learning-background-clip" class="visually-hidden">
+      </li>
+      <li>
+        <label for="learning-backdrop">backdrop-filter</label>
+        <input type="checkbox" name="" id="learning-backdrop" class="visually-hidden">
+      </li>
+    </ul>
+
+  </section>
+
+
+  <section id="contacto" class="contact">
+    <h2>Contacto</h2>
+
+    <article class="contact-info">
+      <form id="contactForm" class="form" action="">
+
+        <fieldset class="form-style form-switch">
+          <!-- <legend>Elige un estilo</legend> -->
+          <label class="toggle" for="line">Line</label>
+          <input type="radio" name="theme-form" id="line" checked class="check-toggle">
+          <input type="radio" name="theme-form" id="shadow" class="check-toggle">
+          <label for="shadow">Shadow</label>
+        </fieldset>
+
+        <fieldset class="field-text form-name">
+          <label for="nombre">Nombre</label>
+          <input type="text" name="nombre" id="nombre" placeholder="Escribe tu nombre">
+        </fieldset>
+
+        <fieldset class="field-text form-email">
+          <label for="email">Email</label>
+          <input type="email" name="email" id="email" placeholder="Escribe tu email">
+        </fieldset>
+
+        <fieldset class="field-check form-learn">
+          <legend>¿Qué te gustaría aprender?</legend>
+          <label for="learn-flex">Quiero aprender Flexbox</label>
+          <input type="checkbox" name="flex" id="learn-flex" class="visually-hidden">
+          <!-- <input type="checkbox" name="flex" id="flex"> -->
+          <label for="learn-grid">Quiero aprender Grid</label>
+          <input type="checkbox" name="grid" id="learn-grid" class="visually-hidden">
+          <!-- <input type="checkbox" name="grid" id="grid"> -->
+          <label for="learn-anim">Quiero aprender animaciones</label>
+          <input type="checkbox" name="anim" id="learn-anim" class="visually-hidden">
+          <!-- <input type="checkbox" name="anim" id="anim"> -->
+        </fieldset>
+
+        <fieldset class="field-radio form-level">
+          <legend>¿Cuál consideras que es tu nivel?</legend>
+          <label for="junior">Principiante</label>
+          <!-- <input type="radio" name="level" id="junior" checked> -->
+          <input type="radio" name="level" id="junior" checked class="visually-hidden">
+          <label for="mid">Intermedio</label>
+          <!-- <input type="radio" name="level" id="mid"> -->
+          <input type="radio" name="level" id="mid" class="visually-hidden">
+          <label for="senior">Avanzado</label>
+          <!-- <input type="radio" name="level" id="senior"> -->
+          <input type="radio" name="level" id="senior" class="visually-hidden">
+        </fieldset>
+
+        <fieldset class="field-area form-message">
+          <label for="texto">¿Quieres contarnos alguna cosa?</label>
+          <textarea name="texto" id="texto" cols="30" rows="10" placeholder="¿Qué nos quieres contar?"></textarea>
+        </fieldset>
+        
+        <fieldset class="field-rgpd form-rgpd">
+          <label for="rgpd">He leído y acepto la <a href="">política de privacidad</a></label>
+          <input type="checkbox" name="rgpd" id="rgpd" class="visually-hidden">
+        </fieldset>
+
+        <input class="btn form-submit" type="submit" value="Enviar">
+
+      </form>
+
+      <div class="social">
+        <a href="https://x.com" target="_blank"><img class="icon" src="assets/x.svg" alt="X"></a>
+        <a href="https://www.facebook.com" target="_blank"><img class="icon" src="assets/facebook.svg" alt="Facebook"></a>
+        <a href="https://discord.com/" target="_blank"><img class="icon" src="assets/discord.svg" alt="Discord"></a>
+        <a href="https://codepen.io/" target="_blank"><img class="icon" src="assets/codepen.svg" alt="Codepen"></a>
+        <a href="https://github.com/" target="_blank"><img class="icon" src="assets/github.svg" alt="Github"></a>
+        <a href="https://linkedin.com/" target="_blank"><img class="icon" src="assets/linkedin.svg" alt="Linkedin"></a>
+        <a href="https://telegram.com/" target="_blank"><img class="icon" src="assets/telegram.svg" alt="Telegram"></a>
+        <a href="https://whatsapp.com/" target="_blank"><img class="icon" src="assets/whatsapp.svg" alt="Whatsapp"></a>
+      </div>
+
+    </article>
+
+  </section>
+  
+</body>
+</html>
