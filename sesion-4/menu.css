@@ -1,0 +1,76 @@
+/* step 4 - menu fixed & mobile */
+
+.label-toggle,
+.toggle-menu {
+  display: block;
+  cursor: pointer;
+}
+
+.menu {
+  position: fixed;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  padding-inline: var(--boxed);
+  z-index: 3;
+  background-color: var(--theme-background);
+
+
+  .toggle-menu-mobile {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+  }
+
+  & .theme {
+    margin-right: auto;
+  }
+
+  &:has(#toggle-menu:checked) {
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    z-index: 4;
+
+    & .theme {
+      margin-right: unset;
+    }
+
+    .toggle-close {
+      display: block;
+    }
+    .toggle-open {
+      display: none;
+    }
+    .menu-link {
+      display: block;
+    }
+  }
+  &:has(#toggle-menu:not(:checked)){
+    .toggle-close {
+      display: none;
+    }
+    .toggle-open {
+      display: block;
+    }
+    .menu-link {
+      display: none;
+    }
+  } 
+}
+
+
+
+/* step 3 - h2 sticky */
+
+/* only mobile */
+/* h2 {
+  text-align: center;
+  font-size: clamp(1rem, 5vw, 4rem);
+  position: sticky;
+  top: var(--menu-height);
+  z-index: 2;
+  background-color: var(--theme-background);
+} */

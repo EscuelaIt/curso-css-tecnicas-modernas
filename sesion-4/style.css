@@ -52,6 +52,13 @@
   --color-gradient-1: var(--color-gradient-cyan);
   --color-gradient-2: var(--color-gradient-green);
   --color-gradient-3: var(--color-gradient-palepink);
+
+
+  /* step 1 - boxed */
+  --boxed-size: 1000px;
+  --boxed: max(calc((100vw - var(--boxed-size)) / 2), 20px);
+  /* step 0 - variable para menu height */
+  --menu-height: 4rem;
 }
 
 *,
@@ -60,6 +67,12 @@
   box-sizing: border-box;
   padding: 0;
   margin: 0;
+}
+
+/* step 2 - scroll & padding scroll */
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 4rem;
 }
 
 /**************/
@@ -80,7 +93,7 @@
   justify-content: center;
   align-items: center;
   gap: 1rem;
-  margin-bottom: 2rem;
+  /* margin-bottom: 2rem; */
   & label {
     cursor: pointer;
     &:hover {
@@ -123,6 +136,23 @@
   }
 }
 
+
+/* step 1 */
+.boxed {
+  padding-inline: var(--boxed);
+}
+
+
+/* step 0 */
+.box {
+  display: block;
+  width: 200px;
+  padding: 20px;
+  border: 10px solid blue;
+  margin-left: 4rem;
+  margin-inline-start: 4rem;
+}
+
 /*********************/
 /* estilos generales */
 /*********************/
@@ -140,6 +170,13 @@ body {
   font-family: 'Montserrat', Arial, sans-serif;
 
 }
+
+/* step 0  - media query or */
+/* @media (width < 600px), (width > 1200px) {
+  body {
+    background-color: lime;
+  }
+} */
 
 body:has(#dark:checked) {
   --theme-primary: var(--color-green);
@@ -213,38 +250,108 @@ h1 {
   font-size: 40vmin;
 }
 
-section:is(.learnings,.contact) {
-  max-width: 80vw;
-  margin: 0 auto;
-}
 
+
+/* step 3 - h2 sticky */
+
+/* desktop + mobile */
 h2 {
   text-align: center;
-  margin-block: 4rem;
+  /* margin-block-end: 4rem; */
   font-size: clamp(1rem, 5vw, 4rem);
+  /* step 3 - h2 sticky */
+  position: sticky;
+  /* top: 0; */
+  top: var(--menu-height);
+  z-index: 2;
+  background-color: var(--theme-background);
 }
 
-section {
-  padding-block: 4rem;
+
+/* desktop con mobile arriba */
+/* @media screen and ( width > 600px ){
+  h2 {
+    position: relative;
+    top: 0;
+  }
+} */
+
+
+
+
+/* only desktop y mobile a parte */
+/* h2 { 
+  text-align: center;
+  margin-block-end: 2rem;
+  font-size: clamp(1rem, 5vw, 4rem);
+  position: relative;
+  top: 0;
+  background-color: var(--theme-background);
+} */
+
+
+
+
+/* step 1 */
+section > *:not(h2) {
+  /* step 3 - h2 sticky */
+  /* padding-block-end: 2rem; */
+  padding-inline: var(--boxed);
 }
 
+/* step 3 - h2 sticky */
+section > div {
+  padding-block: 2rem;
+}
 
 /***************************************/
 /*            Sección Inicio           */
 /***************************************/
 
-.theme {
-  height: 4rem;
-  margin: 0 auto;
+
+/* step 4 - menu fixed & mobile */
+.label-toggle,
+.toggle-menu {
+  display: none;
+}
+.menu {
+  position: fixed;
+  top: 0;
+  width: 100vw;
+  background-color: var(--theme-background);
+  /* box-shadow: inset 0 -10px 7px -11px var(--theme-primary-alt); */
+  z-index: 3;
+
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 1rem;
+  padding-inline: var(--boxed);
+
+  & .theme {
+    margin-right: auto;
+  }
+}
+.menu-link {
+  display: block;
 }
 
+.theme {
+  height: var(--menu-height);
+}
+
+/* step 0 - ngrok svh */
 .inicio {
   display: grid;
   place-items: center;
-  height: calc(100svh - 4rem);
+  /* height: calc(100vh - var(--menu-height)); */
+  /* height: calc(100svh - var(--menu-height)); *//* menu no fixed */
+  height: calc(100svh); /* menu fixed */
   background: var(--background-cover);
   background-repeat: no-repeat;
   background-size: cover;
+  background-position: center;
 }
 
 .gradient-text {
@@ -256,6 +363,44 @@ section {
   background-position: center;
 }
 
+/***************************************/
+/*           Sección Historia          */
+/***************************************/
+
+/* step 5 - columns */
+.historia {
+  container-type: inline-size;
+  container-name: columns;
+}
+
+:is(.datos,.hist) {
+  column-count: 1;
+  & p {
+    padding-block-end: 1rem;
+    line-height: 1.5;
+  }
+} 
+
+@container columns (width > 800px) {
+  .hist {
+    column-count: 2;
+  }
+}
+
+/* step 6 - shape outside */
+.shaped {
+  width: 100%;
+  border-radius: 50%;
+  margin-block: 1rem;
+  @media screen and ( width > 600px ){
+    height: 15rem;
+    width: 15rem;
+    margin-inline: 1rem;
+    float: left;
+    shape-outside: circle(50%);
+  }
+
+}
 
 /******************************************/
 /*           Sección Hihglights           */
@@ -284,7 +429,9 @@ section {
   gap: 2rem;
 }
 
+/* step 8 - full card */
 .card {
+  position: relative;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -312,6 +459,9 @@ section {
     height: 200px;
   }
   & .card-btn {
+    /* step 8 - full card */
+    /* position: initial; */
+    position: relative;
     background: linear-gradient(45deg, var(--color-gradient-blue),var(--color-gradient-green),var(--color-gradient-pink));
     color: var(--color-black);
     margin-block-end: 2rem;
@@ -328,6 +478,13 @@ section {
     &:hover {
       --text-axis: 400;
       --upper-height: 760;
+    }
+    /* step 8 - full card */
+    &::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: repeating-linear-gradient( 35deg, hsl(40 100% 50% / .5), hsl(40 100% 50% / .5) 10%, hsl(80 100% 50% / .8) 10%, hsl(80 100% 50% / .8) 20% );
     }
   }
 }
@@ -405,10 +562,10 @@ section {
   
 }
 
-.learnings {
+/* .learnings {
   max-width: 80vw;
   margin: 5rem auto;
-}
+} */
 .learnings .learnings-list {
   display: grid;
   justify-content: center;
@@ -438,10 +595,80 @@ section {
     background-color: var(--theme-primary);
     color: var(--theme-background);
   }
+  /* step 8 - full card */
   & label {
+    position: initial;
     cursor: pointer;
+    &::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+    }
   }
 }
+
+
+
+/*****************************************/
+/*                Galería                */
+/*****************************************/
+
+/* step 5 - columns */
+
+.gallery {
+  container-name: fotos;
+  container-type: inline-size;
+}
+
+/* The Masonry Container */
+.masonry {
+  margin: 0 auto;
+  column-gap: .8rem;
+  column-count: 1;
+}
+
+/* The Masonry Brick */
+.masonry img {
+  padding: 0;
+  margin: 0;
+  margin-bottom: .8rem;
+  max-width: 100%;
+  border-radius: 4px;
+  width: calc(100vw / 1);
+}
+
+
+@container fotos (width > 600px) {
+  .masonry {
+    column-gap: 1rem;
+    column-count: 2;
+    & img {
+      width: calc(100vw / 2);
+      margin-bottom: 1rem;
+    }
+  }
+}
+@container fotos (width > 800px) {
+  .masonry {
+    column-gap: 1.5rem;
+    column-count: 3;
+    & img {
+      width: calc(100vw / 3);
+      margin-bottom: 1.5rem;
+    }
+  }
+}
+@container fotos (width > 1000px) {
+  .masonry {
+    column-count: 4;
+    & img {
+      width: min(300px, calc(1200px / 4));
+    }
+  }
+}
+
+
+
 
 
 /*****************************************/
@@ -833,5 +1060,63 @@ section {
       border: none;
       box-shadow: var(--form-shadow);
     }
+  }
+}
+
+/* step 7 - spinner */
+.form-resp {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: var(--theme-primary);
+}
+.spinner {
+  display: none;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  width: 2rem;
+  height: 2rem;
+  border-radius: 50%;
+  background: conic-gradient(var(--theme-primary), transparent);
+  animation: spin 1s linear infinite;
+}
+.spinner::after{
+  content: '';
+  position: absolute;
+  width: 60%;
+  height: 60%;
+  background-color: var(--theme-background);
+  border-radius: 50%;
+  background-size: 50%;
+  background-repeat: no-repeat;
+}
+@keyframes spin {
+  0% {
+    transform: rotateZ(0);
+  }
+  100% {
+    transform: rotateZ(360deg);
+  }
+}
+
+
+/*****************************************/
+/*                Footer                 */
+/*****************************************/
+
+footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: var(--menu-height);
+  border-top: 2px solid var(--theme-primary);
+  & p {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  & svg {
+    fill: var(--theme-primary)
   }
 }
