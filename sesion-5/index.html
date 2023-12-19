@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" media='screen and (width < 600px)' href="mobile.css"/>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@200;400;700&family=Roboto+Flex:opsz,GRAD,YTUC@8..144,150,712;8..144,150,760&display=swap" rel="stylesheet">
+</head>
+<body>
+
+<!-- <main class="container-full-slider"> -->
+<main>
+
+
+
+  <header>
+    <nav class="menu">
+      <div class="theme selector">
+        <label for="light"><img class="light" src="assets/light.svg" alt="Light Mode"></label>
+        <input type="radio" name="theme" id="light" class="visually-hidden">
+        <label for="dark"><img class="dark" src="assets/dark.svg" alt="Dark Mode"></label>
+        <input type="radio" name="theme" id="dark" class="visually-hidden">
+        <label for="system"><img class="system" src="assets/system.svg" alt="OS System Mode"></label>
+        <input type="radio" name="theme" id="system" class="visually-hidden" checked>
+      </div>
+      <a class="menu-link font-var" href="#historia">Historia</a>
+      <a class="menu-link font-var" href="#curiosidades">Curiosidades</a>
+      <a class="menu-link font-var" href="#destacados">Destacados</a>
+      <a class="menu-link font-var" href="#aprendizajes">Aprendizajes</a>
+      <a class="menu-link font-var" href="#galeria">Galería</a>
+      <a class="menu-link font-var" href="#contacto">Contacto</a>
+      <div class="toggle-menu-mobile">
+        <label class="label-toggle" for="toggle-menu">
+          <img class="toggle-open" src="assets/menu.svg" alt="Open Menu">
+          <img class="toggle-close" src="assets/close.svg" alt="Close Menu">
+        </label>
+        <input type="checkbox" id="toggle-menu" class="visually-hidden">
+      </div>
+    </nav>
+  </header>
+ 
+  <div class="progress"></div>
+
+
+<section class="inicio">
+  <h1 class="gradient-text">CSS</h1>
+</section>
+
+<section id="historia" class="historia">
+  <h2>Historia</h2>
+
+  <div class="hist">
+    <p>El CSS, conocido como "Cascading Style Sheets", es un lenguaje esencial en el desarrollo web. Este lenguaje permite definir la presentación y el estilo de un documento HTML. Con CSS, puedes controlar aspectos visuales como el diseño, colores, fuentes y disposición de los elementos en una página web.</p>
+    <p>Su historia se remonta a mediados de los años 90, cuando surgió la necesidad de separar el contenido de la presentación en la web. En 1996, el World Wide Web Consortium (W3C) publicó por primera vez el CSS1 como una forma de dar estilo a los documentos HTML. Desde entonces, ha evolucionado a través de diferentes versiones (CSS2, CSS3 y módulos específicos) para ofrecer más funcionalidades y capacidades de diseño.</p>
+    <p>La utilidad del CSS radica en su capacidad para mejorar la accesibilidad y la usabilidad de los sitios web. Al separar la estructura del contenido (HTML) de su presentación (CSS), facilita la mantenibilidad del código, permitiendo actualizaciones y modificaciones de estilo sin afectar el contenido.</p>
+    <p>Las aplicaciones del CSS son diversas y abarcan desde páginas web simples hasta complejas aplicaciones en línea. Se utiliza para diseñar sitios web corporativos, tiendas en línea, blogs, redes sociales y prácticamente cualquier plataforma en línea que requiera una interfaz visual atractiva y funcional.</p>
+    <p>En resumen, el CSS es un pilar fundamental en el desarrollo web moderno, permitiendo la creación de diseños atractivos, adaptables y funcionales para todo tipo de plataformas y dispositivos, desempeñando un papel crucial en la experiencia de usuario en línea.</p>
+  </div>
+</section>
+
+<section class="cite cite-light">
+  <div>
+    <p>¡Aprende el potencial de CSS!</p>
+    <!-- step 11 -->
+    <a class="animated-border" href="#contactForm">Quiero aprender</a>
+  </div>
+</section>
+
+<section id="curiosidades" class="curiosidades">
+  <h2>Curiosidades</h2>
+
+  <div class="datos gradient-text">
+    <img class="shaped" src="assets/peter.gif" alt="">
+    <p>El primer borrador de CSS fue propuesto por Håkon Wium Lie en 1994. Se creó para complementar HTML y separar la estructura del contenido de su presentación. Desde entonces, ha evolucionado significativamente y se han añadido nuevas funcionalidades en las diferentes versiones.</p>
+    <p>La "C" en CSS significa "Cascading", refiriéndose a la forma en que se resuelven los conflictos cuando múltiples reglas se aplican a un mismo elemento. Esta cascada sigue un orden de prioridad basado en la especificidad, la importancia y la ubicación del estilo.</p>
+    <p>Existen herramientas como Sass, Less y Stylus que extienden las capacidades de CSS permitiendo variables, funciones, anidamiento y más. Por otro lado, los postprocesadores como PostCSS ofrecen la capacidad de transformar y optimizar el código CSS, agregando prefijos automáticos, reduciendo su tamaño, entre otras optimizaciones.</p>
+    <p>El estándar CSS sigue creciendo. Se han introducido módulos específicos que añaden nuevas funcionalidades, como Grid Layout para diseños de cuadrícula, Flexbox para diseños flexibles, y Variables CSS para reutilizar valores en todo el documento.</p>
+  </div>
+</section>
+
+<section id="destacados" class="highlights">
+
+  <h2>Destacados</h2>
+
+  <div class="cards">
+    <article class="card">
+      <h3 class="card-title">Desata tu creatividad</h3>
+      <div class="card-img"><img src="assets/creativity.jpg" alt="monitor de ordenador con una nube de colores"></div>
+      <p class="card-text">Aprende a dar vida a tus ideas con estilos asombrosos. Domina CSS y crea diseños web impactantes que cautiven a tu audiencia.</p>
+      <a class="card-btn font-var" href="#contactForm">Descubre más</a>
+    </article>
+
+    <article class="card">
+      <h3 class="card-title">Eleva tu presencia online</h3>
+      <div class="card-img"><img src="assets/laptop.jpg" alt=""></div>
+      <p class="card-text">Conviértete en un experto en CSS. Impulsa la estética de tus proyectos web y brinda una imagen profesional a tus clientes y usuarios.Conviértete en un experto en CSS. Impulsa la estética de tus proyectos web y brinda una imagen profesional a tus clientes y usuarios.</p>
+      <a class="card-btn font-var" href="#contactForm">Inscríbete ahora</a>
+    </article>
+
+    <article class="card">
+      <h3 class="card-title">Domina CSS</h3>
+      <div class="card-img"><img src="assets/remote.jpeg" alt=""></div>
+      <p class="card-text">Aprende las técnicas más actuales de CSS. Domina efectos, layouts y animaciones para destacar en el mundo del diseño web.</p>
+      <a class="card-btn font-var" href="#contactForm">Comienza hoy</a>
+    </article>
+  </div>
+
+</section>
+
+  <section id="aprendizajes" class="learnings">
+
+    <h2>Aprendizajes</h2>
+
+    <div class="selector">
+      <label for="list"><img src="assets/list.svg" alt="List view"></label>
+      <input type="radio" name="view" id="list" class="visually-hidden">
+      <label for="grid"><img src="assets/grid.svg" alt="Grid view"></label>
+      <input type="radio" name="view" id="grid" class="visually-hidden" checked>
+    </div>
+    <div>
+      <ul class="learnings-list">
+        <li>
+          <label for="learning-Transition">Transition</label>
+          <input type="checkbox" name="" id="learning-Transition" class="visually-hidden">
+        </li>
+        <li>
+          <label for="learning-animation">Animation</label>
+          <input type="checkbox" name="" id="learning-animation" class="visually-hidden">
+        </li>
+        <li>
+          <label for="learning-animation-time">Animation Timeline</label>
+          <input type="checkbox" name="" id="learning-animation-time" class="visually-hidden">
+        </li>
+        <li>
+          <label for="learning-snap">Scroll Snap</label>
+          <input type="checkbox" name="" id="learning-snap" class="visually-hidden">
+        </li>
+        <li>
+          <label for="learning-scroll-beh">Scroll Behavior</label>
+          <input type="checkbox" name="" id="learning-scroll-beh" class="visually-hidden">
+        </li>
+        <li>
+          <label for="learning-scroll-padding">Scroll Padding Top</label>
+          <input type="checkbox" name="" id="learning-scroll-padding" class="visually-hidden">
+        </li>
+        <li>
+          <label for="learning-calc">calc()</label>
+          <input type="checkbox" name="" id="learning-calc" class="visually-hidden">
+        </li>
+        <li>
+          <label for="learning-full-size-link">Full Size Link</label>
+          <input type="checkbox" name="" id="learning-full-size-link" class="visually-hidden">
+        </li>
+        <li>
+          <label for="learning-box-sizing">Box Sizing</label>
+          <input type="checkbox" name="" id="learning-box-sizing" class="visually-hidden">
+        </li>
+        <li>
+          <label for="learning-sticky">Sticky title</label>
+          <input type="checkbox" name="" id="learning-sticky" class="visually-hidden">
+        </li>
+        <li>
+          <label for="learning-spinner">Spinner</label>
+          <input type="checkbox" name="" id="learning-spinner" class="visually-hidden">
+        </li>
+        <li>
+          <label for="learning-inline-block">inline/block padding/margin</label>
+          <input type="checkbox" name="" id="learning-inline-block" class="visually-hidden">
+        </li>
+        <li>
+          <label for="learning-placeholder">:placeholder</label>
+          <input type="checkbox" name="" id="learning-placeholder" class="visually-hidden">
+        </li>
+        <li>
+          <label for="learning-has">:has</label>
+          <input type="checkbox" name="" id="learning-has" class="visually-hidden">
+        </li>
+        <li>
+          <label for="learning-is">:is</label>
+          <input type="checkbox" name="" id="learning-is" class="visually-hidden">
+        </li>
+        <li>
+          <label for="learning-nesting">Nesting</label>
+          <input type="checkbox" name="" id="learning-nesting" class="visually-hidden">
+        </li>
+        <li>
+          <label for="learning-vars">Custom Properties</label>
+          <input type="checkbox" name="" id="learning-vars" class="visually-hidden">
+        </li>
+        <li>
+          <label for="learning-visual-hidden">Visually Hidden</label>
+          <input type="checkbox" name="" id="learning-visual-hidden" class="visually-hidden">
+        </li>
+        <li>
+          <label for="learning-inset-shadow">Inset Box Shadow</label>
+          <input type="checkbox" name="" id="learning-inset-shadow" class="visually-hidden">
+        </li>
+        <li>
+          <label for="learning-filter">Filter</label>
+          <input type="checkbox" name="" id="learning-filter" class="visually-hidden">
+        </li>
+      </ul>
+    </div>
+
+  </section>
+  
+  <section class="cite cite-dark">
+    <div>
+      <p>¡Descubre la magia de CSS!</p>
+      <!-- step 10b -->
+      <a class="animated-gradient" href="#contactForm">Apuntarme</a>
+      <!-- step 10a -->
+      <!-- <a class="slide-gradient" href="#contactForm">Apuntarme</a> -->
+    </div>
+  </section>
+
+  <section id="galeria" class="gallery">
+    
+    <h2>Galería</h2>
+    
+    <div class="masonry">
+      <img src="https://picsum.photos/200/300?random=1">
+      <img src="https://picsum.photos/200/200?random=2">
+      <img src="https://picsum.photos/300/300?random=3">
+      <img src="https://picsum.photos/200/300?random=4">
+      <img src="https://picsum.photos/200/200?random=5">
+      <img src="https://picsum.photos/200/200?random=6">
+      <img src="https://picsum.photos/300/300?random=7">
+      <img src="https://picsum.photos/300/200?random=8">
+      <img src="https://picsum.photos/200/300?random=9">
+      <img src="https://picsum.photos/200/300?random=10">
+      <img src="https://picsum.photos/200/300?random=11">
+      <img src="https://picsum.photos/300/300?random=12">
+      <img src="https://picsum.photos/200/300?random=13">
+    </div>
+  </section>
+  </section>
+
+
+  <section id="contacto" class="contact">
+    <h2>Contacto</h2>
+
+    <div class="contact-info">
+      <form id="contactForm" class="form" action="">
+
+        <fieldset class="form-style form-switch">
+          <label class="toggle" for="line">Line</label>
+          <input type="radio" name="theme-form" id="line" checked class="check-toggle">
+          <input type="radio" name="theme-form" id="shadow" class="check-toggle">
+          <label for="shadow">Shadow</label>
+        </fieldset>
+
+        <fieldset class="field-text form-name">
+          <label for="nombre">Nombre</label>
+          <input type="text" name="nombre" id="nombre" placeholder="Escribe tu nombre">
+        </fieldset>
+
+        <fieldset class="field-text form-email">
+          <label for="email">Email</label>
+          <input type="email" name="email" id="email" placeholder="Escribe tu email">
+        </fieldset>
+
+        <fieldset class="field-check form-learn">
+          <legend>¿Qué te gustaría aprender?</legend>
+          <label for="learn-flex">Quiero aprender Flexbox</label>
+          <input type="checkbox" name="flex" id="learn-flex" class="visually-hidden">
+          <label for="learn-grid">Quiero aprender Grid</label>
+          <input type="checkbox" name="grid" id="learn-grid" class="visually-hidden">
+          <label for="learn-anim">Quiero aprender animaciones</label>
+          <input type="checkbox" name="anim" id="learn-anim" class="visually-hidden">
+        </fieldset>
+
+        <fieldset class="field-radio form-level">
+          <legend>¿Cuál consideras que es tu nivel?</legend>
+          <label for="junior">Principiante</label>
+          <input type="radio" name="level" id="junior" checked class="visually-hidden">
+          <label for="mid">Intermedio</label>
+          <input type="radio" name="level" id="mid" class="visually-hidden">
+          <label for="senior">Avanzado</label>
+          <input type="radio" name="level" id="senior" class="visually-hidden">
+        </fieldset>
+
+        <fieldset class="field-area form-message">
+          <label for="texto">¿Quieres contarnos alguna cosa?</label>
+          <textarea name="texto" id="texto" cols="30" rows="10" placeholder="¿Qué nos quieres contar?"></textarea>
+        </fieldset>
+        
+        <fieldset class="field-rgpd form-rgpd">
+          <label for="rgpd"><span>He leído y acepto la <a href="">política de privacidad</a></span></label>
+          <input type="checkbox" name="rgpd" id="rgpd" class="visually-hidden">
+        </fieldset>
+
+        <input class="btn form-submit" type="submit" value="Enviar">
+
+        <div class="form-resp">
+          <span class="spinner"></span>
+        </div>
+
+      </form>
+
+      <div class="social">
+        <a href="https://x.com" target="_blank"><img class="icon" src="assets/x.svg" alt="X"></a>
+        <a href="https://www.facebook.com" target="_blank"><img class="icon" src="assets/facebook.svg" alt="Facebook"></a>
+        <a href="https://discord.com/" target="_blank"><img class="icon" src="assets/discord.svg" alt="Discord"></a>
+        <a href="https://codepen.io/" target="_blank"><img class="icon" src="assets/codepen.svg" alt="Codepen"></a>
+        <a href="https://github.com/" target="_blank"><img class="icon" src="assets/github.svg" alt="Github"></a>
+        <a href="https://linkedin.com/" target="_blank"><img class="icon" src="assets/linkedin.svg" alt="Linkedin"></a>
+        <a href="https://telegram.com/" target="_blank"><img class="icon" src="assets/telegram.svg" alt="Telegram"></a>
+        <a href="https://whatsapp.com/" target="_blank"><img class="icon" src="assets/whatsapp.svg" alt="Whatsapp"></a>
+      </div>
+
+    </div>
+
+  </section>
+</main>
+
+  <footer class="boxed">
+    <p>Made with <svg xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 -960 960 960" width="24"><path d="m480-120-58-52q-101-91-167-157T150-447.5Q111-500 95.5-544T80-634q0-94 63-157t157-63q52 0 99 22t81 62q34-40 81-62t99-22q94 0 157 63t63 157q0 46-15.5 90T810-447.5Q771-395 705-329T538-172l-58 52Z"/></svg> by Aleix</p>
+  </footer>
+
+  <script>
+    const links = document.querySelectorAll('.menu-link')
+    const toggle = document.querySelector('#toggle-menu')
+    links.forEach( x => {
+      x.addEventListener('click', () => toggle.checked = false )
+    })
+  </script>
+
+  <script>
+    const resp = document.querySelector('.form-resp');
+    const spinner = document.querySelector('.spinner');
+    const form = document.querySelector('#contactForm');
+    form.onsubmit = (x) => {
+      x.preventDefault();
+      spinner.style.display = 'flex';
+      setTimeout(()=>{
+        spinner.style.display = 'none';
+        resp.innerHTML = '<p>Formulario enviado correctamente</p>'
+      },2000)
+    }
+  </script>
+</body>
+</html>
